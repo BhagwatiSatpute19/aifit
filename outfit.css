@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Playwrite+AU+NSW:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Glowing colorful background */
+body {
+  min-height: 100vh;
+  background-image: url(vector-black-triangular-abstract-texture-low-light-background.jpg);
+    background: linear-gradient(270deg, #f8f5f8, #d0cfd0, #aeaeae, #e9dea9);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+
+}
+
+/* Glassmorphism container */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 400px;
+  color: rgb(230, 24, 24);
+  background-image: url(satria-aditya-moHSPOxxnhI-unsplash.jpg);
+  background-size: cover;
+  
+}
+
+/* Headline */
+h1 {
+  position: absolute;
+  top: 20px;
+  color: white;
+  text-shadow: 2px 2px 5px #000;
+}
+
+/* Labels and Inputs */
+label {
+  font-size: 15px;
+  margin-bottom: 5px;
+  display: block;
+  color: #f8f4f4;
+  font-weight: bold;
+   font-family: 'Times New Roman', Times, serif;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(204, 201, 163, 0.2);
+  color: rgb(255, 255, 255);
+  outline: none;
+}
+
+/* Placeholder text */
+::placeholder {
+  color: #c2c1c1;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+ 
+}
+/* Space between sections */
+#result {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+/* Improve image size and fit */
+#imageResult img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Align text better */
+#outfitSuggestion {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+}
