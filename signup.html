@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | AiFitLook</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-card">
+      <h2>Create Account</h2>
+      <p style="text-align: center; color: #6b7280; margin-bottom: 2rem;">Join AiFitLook and discover your perfect style</p>
+      
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" required>
+        </div>
+
+        <button type="submit" class="form-submit">Create Account</button>
+      </form>
+
+      <div class="form-link">
+        <p>Already have an account? <a href="login.html">Sign in here</a></p>
+      </div>
+
+      <p id="message" style="text-align: center; margin-top: 1rem; font-weight: 500;"></p>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA1CXsH_2C8_F95ud4eE3KWN3IXpjuAeZE",
+      authDomain: "aifitlook.firebaseapp.com",
+      projectId: "aifitlook",
+      storageBucket: "aifitlook.appspot.com",
+      messagingSenderId: "243803127747",
+      appId: "1:243803127747:web:014730a2905bb740210776",
+      measurementId: "G-VVNQ7BK24E"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const signupForm = document.getElementById("signupForm");
+    const message = document.getElementById("message");
+
+    signupForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        message.style.color = "#dc2626";
+        message.innerText = "❌ Passwords do not match";
+        return;
+      }
+
+      if (password.length < 6) {
+        message.style.color = "#dc2626";
+        message.innerText = "❌ Password must be at least 6 characters long";
+        return;
+      }
+
+      try {
+        message.style.color = "#059669";
+        message.innerText = "Creating account...";
+        
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        message.innerText = "✅ Account created successfully! Redirecting...";
+        
+        // Redirect to dashboard
+        setTimeout(() => {
+          window.location.href = "outfit.html";
+        }, 1500);
+      } catch (error) {
+        console.error("Signup error:", error);
+        message.style.color = "#dc2626";
+        message.innerText = `❌ ${error.message}`;
+      }
+    });
+  </script>
+</body>
+</html>
