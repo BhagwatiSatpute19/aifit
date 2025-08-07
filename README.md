@@ -136,6 +136,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 For support or questions, please contact the development team or create an issue in the repository.
 
----
+Email : rupaljivtode@gmail.com
+        bhagwatisatpute19@gmail.com
 
 **AiFitLook** - Discover Your Perfect Style with AI ✨ 
+
